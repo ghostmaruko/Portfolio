@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css"; // Se hai uno stile base
+import { SpaceDevadersGame } from "./games/SpaceDevadersGame";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="App"
+      style={{
+        backgroundColor: "#000",
+        minHeight: "100vh",
+        color: "#fff",
+        textAlign: "center",
+      }}
+    >
+      <h1>Benvenuto nel mio Portfolio</h1>
+      <p>👾 Gioca a Space Devaders mentre esplori!</p>
+
+      <section id="game" style={{ marginTop: "40px" }}>
+        <SpaceDevadersGame />
+      </section>
     </div>
   );
 }
