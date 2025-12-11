@@ -11,6 +11,11 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -24,19 +29,13 @@
       rel="stylesheet"
     />
     <!-- Custom Styles -->
-      <link rel="stylesheet" href="style/style.production.css" />
+    <link rel="stylesheet" href="style/style.production.css" />
     <!-- <link rel="stylesheet" href="style/style.css" /> -->
   </head>
 
   <body>
-        <div class="header-container">
+    <div class="header-container">
       <header class="header">
-        <!-- LOGO -->
-        <img
-          src="https://placehold.co/100x100"
-          alt="Logo Marco Esu"
-          class="logo"
-        />
 
         <!-- MENU HAMBURGER -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
@@ -53,81 +52,113 @@
         </label>
 
         <!-- NAVIGATION - deve venire dopo l’input per funzionare con ~ nel CSS -->
-        <nav role="navigation" aria-label="Main Navigation">
-          <ul id="main-menu" role="menubar" class="navigation-list">
-            <li role="presentation">
-              <a
-                href="index.html"
-                role="menuitem"
-                class="navigation-list__item navigation-list__item--active"
-                aria-current="page"
-                >Home</a
-              >
-            </li>
-            <li role="presentation">
-              <a href="about.html" role="menuitem" class="navigation-list__item"
-                >About Me</a
-              >
-            </li>
-            <li role="presentation">
-              <a href="work.html" role="menuitem" class="navigation-list__item"
-                >Work</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="contact.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >Let's Talk</a
-              >
-            </li>
+        <nav aria-label="Main Navigation">
+          <ul id="main-menu" class="navigation-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="work.html" aria-current="page">Work</a></li>
           </ul>
         </nav>
       </header>
     </div>
 
-    <main style="padding-top: 100px">
+    <main>
       <section class="work-section">
-        <h1>My Work</h1>
+        <h2 class="pixel-timeline">/work</h2>
         <div class="grid">
           <div class="grid__item">
-            <h2>Rock-Paper-Scissor</h2>
-            <p>A simple Rock-Paper-Scissor game built with JS.</p>
+            <h2>Pokedex-app</h2>
+            <p>
+              A simple and lightweight Pokédex application built with HTML, CSS,
+              and vanilla JavaScript. The app loads data for the first 150
+              Pokémon using the PokéAPI and displays them in a responsive grid,
+              with a modal showing detailed information for each selected
+              Pokémon.
+            </p>
             <a
               class="work-link"
-              href="https://github.com/ghostmaruko/Rock-Paper-Scissor"
+              href="https://github.com/ghostmaruko/Pokedex-app"
               target="_blank"
               >View on GitHub</a
             >
           </div>
           <div class="grid__item">
-            <h2>Movie Database</h2>
+            <h2>myFlix_API</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-              architecto, ipsam in, tenetur nulla deserunt consequuntur placeat
-              labore, ullam exercitationem porro necessitatibus omnis aperiam
-              eius nisi voluptatibus illo eveniet quod?
+              A RESTful API built with Node.js, Express, and MongoDB for
+              managing movies, users, and authentication. This API serves as the
+              backend for the myFlix web application, supporting both Angular
+              and React clients.
             </p>
-            <a class="work-link" href="#" target="_blank">View on GitHub</a>
+            <a
+              class="work-link"
+              href="https://github.com/ghostmaruko/myFlix_API"
+              target="_blank"
+              >View on GitHub</a
+            >
           </div>
           <div class="grid__item">
-            <h2>Portfolio Website</h2>
+            <h2>myFlix_Client</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa,
-              quidem.
+              myFlix-client is the frontend application of the myFlix API
+              project, built with React. It allows users to browse a collection
+              of movies, view detailed information, manage their profiles, and
+              maintain a list of favorite films. The app communicates with a
+              RESTful API built with Node.js, Express, and MongoDB. This project
+              represents the final frontend version of myFlix and is fully
+              functional.
             </p>
-            <a class="work-link" href="#" target="_blank">View on GitHub</a>
+            <a
+              class="work-link"
+              href="https://my-flix-client-tau.vercel.app/"
+              target="_blank"
+              >Check out the live version</a
+            >
           </div>
           <div class="grid__item">
-            <h2>To-Do App</h2>
+            <h2>Chatt-App</h2>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
-              dignissimos harum, quas accusamus laudantium voluptatum excepturi
-              eligendi quasi voluptas natus, eos officia autem, tempore
-              nesciunt.
+              Chat App built with React Native and Firebase. Supports text
+              messages, images, photos taken on the fly, and location sharing
+              with interactive map previews. Offline caching ensures messages
+              are accessible even without a network connection.
             </p>
-            <a class="work-link" href="#" target="_blank">View on GitHub</a>
+            <a
+              class="work-link"
+              href="https://github.com/ghostmaruko/chat-app"
+              target="_blank"
+              >View on GitHub</a
+            >
+          </div>
+          <div class="grid__item">
+            <h2>Meet-App</h2>
+            <p>
+              A serverless, progressive web application (PWA) built with React,
+              developed using a Test-Driven Development (TDD) approach.
+            </p>
+            <a
+              class="work-link"
+              href="https://meet-app-silk.vercel.app/"
+              target="_blank"
+              >Check out the live version</a
+            >
+          </div>
+          <div class="grid__item">
+            <h2>Myflix_ng</h2>
+            <p>
+              myFlix-client is the frontend application of the myFlix API
+              project, built with Angular. It allows users to browse a
+              collection of movies, view detailed information, manage their
+              profiles, and nd maintain a list of favorite films. The app
+              communicates with a RESTful API built with Node.js, Express, and
+              MongoDB
+            </p>
+            <a
+              class="work-link"
+              href="https://github.com/ghostmaruko/myflix-client-angular"
+              target="_blank"
+              >View on GitHub</a
+            >
           </div>
         </div>
       </section>
@@ -148,7 +179,6 @@
     <div class="footer-container">
       <footer>
         <p>&copy; 2025 My Website</p>
-        <h2>Follow me on</h2>
         <ul class="social-icons">
           <li>
             <a href="https://github.com/" target="_blank" rel="noopener"

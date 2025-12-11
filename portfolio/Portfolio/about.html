@@ -2,123 +2,140 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>About Me</title>
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
-    <!-- Custom Styles -->
-      <link rel="stylesheet" href="style/style.production.css" />
-    <!-- <link rel="stylesheet" href="style/style.css" /> -->
-  </head>
-  <body>
-    <div class="header-container">
-      <header class="header">
-        <!-- LOGO -->
-        <img
-          src="https://placehold.co/100x100"
-          alt="Logo Marco Esu"
-          class="logo"
-        />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- MENU HAMBURGER -->
+    <!-- Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style/style.production.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header-container">
+      <div class="header">
+        <!-- Hamburger -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label
           for="menu-toggle"
           class="hamburger"
           aria-label="Toggle menu"
           aria-controls="main-menu"
-          aria-expanded="false"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </label>
 
-        <!-- NAVIGATION - deve venire dopo l’input per funzionare con ~ nel CSS -->
-        <nav role="navigation" aria-label="Main Navigation">
-          <ul id="main-menu" role="menubar" class="navigation-list">
-            <li role="presentation">
-              <a
-                href="index.html"
-                role="menuitem"
-                class="navigation-list__item navigation-list__item--active"
-                aria-current="page"
-                >Home</a
-              >
-            </li>
-            <li role="presentation">
-              <a href="about.html" role="menuitem" class="navigation-list__item"
-                >About Me</a
-              >
-            </li>
-            <li role="presentation">
-              <a href="work.html" role="menuitem" class="navigation-list__item"
-                >Work</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="contact.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >Let's Talk</a
-              >
-            </li>
+        <!-- Navigation -->
+        <nav aria-label="Main Navigation">
+          <ul id="main-menu" class="navigation-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" aria-current="page">About Me</a></li>
+            <li><a href="work.html">Work</a></li>
           </ul>
         </nav>
-      </header>
-    </div>
-    <main style="padding-top: 100px">
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- INTRO -->
       <section class="about-container">
-        <img
-          src="img/profile_picture.jpg"
-          class="profile_picture"
-          alt="Marco Esu"
-        />
         <div>
-          <h1>Hello World</h1>
+          <h2 class="pixel-timeline">/experiences</h2>
           <p class="about-text">
             I’m Marco, a web developer driven by curiosity and continuous
-            learning. My background combines coding, UX/UI design, and a genuine
-            passion for problem-solving. Outside of development, I recharge my
+            learning. My background combines coding, UX/UI design, and a passion
+            for problem-solving. Outside of development, I recharge my
             creativity through sports, video games, manga, LEGO builds, and
-            exploring new destinations. I approach every project with attention
-            to detail, clean code, and a focus on intuitive user experience.
+            travel. I approach every project with attention to detail, clean
+            code, and intuitive UX.
           </p>
         </div>
       </section>
 
+      <!-- PIXEL TIMELINE -->
+      <section class="pixel-timeline">
+        <h1>My Journey</h1>
+
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2023 – Inizio del percorso</h2>
+              <p>
+                Ho iniziato a studiare sviluppo web: HTML, CSS e JavaScript.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2024 – Full-Stack Development</h2>
+              <p>
+                Node.js, MongoDB, React. Progetti completi e prime API
+                professionali.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2025 – Portfolio & Game Dev</h2>
+              <p>
+                Sto costruendo il mio portfolio in React e un mini pixel-game
+                integrato.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
       <section class="skills-chart">
         <h2>My Skills</h2>
+
         <div class="skill">
           <span>HTML</span>
           <div class="bar"><div class="level html"></div></div>
         </div>
+
         <div class="skill">
           <span>CSS</span>
           <div class="bar"><div class="level css"></div></div>
         </div>
+
         <div class="skill">
           <span>JavaScript</span>
           <div class="bar"><div class="level js"></div></div>
         </div>
+
         <div class="skill">
           <span>React</span>
           <div class="bar"><div class="level react"></div></div>
         </div>
+
         <div class="skill">
           <span>C#</span>
           <div class="bar"><div class="level C"></div></div>
@@ -126,8 +143,8 @@
       </section>
     </main>
 
+    <!-- POKEBALL -->
     <div class="pokeball-wrapper">
-      <!-- <div class="pokeball"></div> -->
       <img
         src="img/Poké_Ball_icon.svg"
         alt="Pokéball"
@@ -138,31 +155,29 @@
       <div class="gotcha-text pixelify-sans">Gotcha!</div>
     </div>
 
-    <div class="footer-container">
-      <footer>
-        <p>&copy; 2025 My Website</p>
-        <h2>Follow me on</h2>
-        <ul class="social-icons">
-          <li>
-            <a href="https://github.com/" target="_blank" rel="noopener"
-              ><img
-                src="https://img.icons8.com/ios-filled/50/ffffff/github--v1.png"
-                alt="GitHub"
-            /></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/marco-esu-502b89136/"
-              target="_blank"
-              rel="noopener"
-              ><img
-                src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"
-                alt="LinkedIn"
-            /></a>
-          </li>
-        </ul>
-      </footer>
-    </div>
+    <!-- FOOTER -->
+    <footer class="footer-container">
+      <p>&copy; 2025 My Website</p>
+      <ul class="social-icons">
+        <li>
+          <a href="https://github.com/" target="_blank">
+            <img
+              src="https://img.icons8.com/ios-filled/50/ffffff/github--v1.png"
+              alt="GitHub"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/marco-esu-502b89136/"
+            target="_blank"
+          >
+            <img
+              src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"
+              alt="LinkedIn"
+          /></a>
+        </li>
+      </ul>
+    </footer>
 
     <script src="js/tota11y.min.js"></script>
   </body>
