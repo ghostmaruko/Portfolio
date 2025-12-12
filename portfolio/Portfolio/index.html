@@ -33,7 +33,7 @@
   </head>
 
   <body>
-    <div id="pre-sound-screen">
+    <!-- <div id="pre-sound-screen">
       <div class="pre-sound-box">
         <h2>Best with sounds. Don't you?!</h2>
         <div class="pre-sound-buttons">
@@ -41,11 +41,23 @@
           <button id="sound-no">No</button>
         </div>
       </div>
-    </div>
+    </div> -->
+    <!-- Global Audio Elements -->
+    <audio
+      id="hover-sound"
+      src="js/sounds/hover.wav"
+      preload="auto"
+      muted
+    ></audio>
+    <audio
+      id="click-sound"
+      src="js/sounds/click.wav"
+      preload="auto"
+      muted
+    ></audio>
 
     <div class="header-container">
       <header class="header">
-
         <!-- MENU HAMBURGER -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label
@@ -144,6 +156,8 @@
         </ul>
       </footer>
     </div>
+
+    <!-- SOUND CONTROL -->
     <div id="sound-control">
       <button id="sound-toggle">🔈 Sound ON</button>
       <input
@@ -160,7 +174,6 @@
 
     <div class="easter-egg">
       <a href="easter-egg.html" data-sfx-click="click.wav">
-        
         <button class="retro-btn" id="randomize-btn">CLICK ME</button>
       </a>
     </div>
@@ -169,6 +182,7 @@
     <script src="js/tota11y.min.js"></script>
 
     <!-- Audio effects -->
-    <script src="js/sound-effect.js" defer></script>
+    <script src="js/sound-system.js" defer></script>
+    <!-- <script src="js/sound-effect.js" defer></script> -->
   </body>
 </html>

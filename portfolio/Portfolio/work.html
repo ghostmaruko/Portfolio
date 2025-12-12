@@ -34,6 +34,20 @@
   </head>
 
   <body>
+    <!-- Global Audio Elements -->
+    <audio
+      id="hover-sound"
+      src="js/sounds/hover.wav"
+      preload="auto"
+      muted
+    ></audio>
+    <audio
+      id="click-sound"
+      src="js/sounds/click.wav"
+      preload="auto"
+      muted
+    ></audio>
+
     <div class="header-container">
       <header class="header">
         <!-- MENU HAMBURGER -->
@@ -90,7 +104,7 @@
               >View on GitHub</a
             >
           </div>
-          <div class="grid__item">
+          <div class="grid__item pixel-card" data-sfx-hover="hover.wav">
             <h2>myFlix_API</h2>
             <p>
               A RESTful API built with Node.js, Express, and MongoDB for
@@ -102,10 +116,11 @@
               class="work-link"
               href="https://github.com/ghostmaruko/myFlix_API"
               target="_blank"
+              data-sfx-click="click.wav"
               >View on GitHub</a
             >
           </div>
-          <div class="grid__item">
+          <div class="grid__item pixel-card" data-sfx-hover="hover.wav">
             <h2>myFlix_Client</h2>
             <p>
               myFlix-client is the frontend application of the myFlix API
@@ -120,10 +135,11 @@
               class="work-link"
               href="https://my-flix-client-tau.vercel.app/"
               target="_blank"
+              data-sfx-click="click.wav"
               >Check out the live version</a
             >
           </div>
-          <div class="grid__item">
+          <div class="grid__item pixel-card" data-sfx-hover="hover.wav">
             <h2>Chatt-App</h2>
             <p>
               Chat App built with React Native and Firebase. Supports text
@@ -135,10 +151,11 @@
               class="work-link"
               href="https://github.com/ghostmaruko/chat-app"
               target="_blank"
+              data-sfx-click="click.wav"
               >View on GitHub</a
             >
           </div>
-          <div class="grid__item">
+          <div class="grid__item pixel-card" data-sfx-hover="hover.wav">
             <h2>Meet-App</h2>
             <p>
               A serverless, progressive web application (PWA) built with React,
@@ -148,10 +165,11 @@
               class="work-link"
               href="https://meet-app-silk.vercel.app/"
               target="_blank"
+              data-sfx-click="click.wav"
               >Check out the live version</a
             >
           </div>
-          <div class="grid__item">
+          <div class="grid__item pixel-card" data-sfx-hover="hover.wav">
             <h2>Myflix_ng</h2>
             <p>
               myFlix-client is the frontend application of the myFlix API
@@ -165,6 +183,7 @@
               class="work-link"
               href="https://github.com/ghostmaruko/myflix-client-angular"
               target="_blank"
+              data-sfx-click="click.wav"
               >View on GitHub</a
             >
           </div>
@@ -209,7 +228,7 @@
       </footer>
     </div>
     <!-- Audio effects -->
-    <script src="js/sound-effect.js" defer></script>
+    <script src="js/sound-system.js" defer></script>
     <script src="js/tota11y.min.js"></script>
   </body>
 </html>
