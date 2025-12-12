@@ -522,6 +522,33 @@ p,
 }
 
 /* ============================================================
+   PIXEL SOUND EFFECTS
+============================================================ */
+
+.pixel-card {
+  border: 4px solid #000;
+  padding: 20px;
+  background: #f4f4f4;
+  transition: transform 0.15s steps(2), box-shadow 0.15s steps(2);
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+.pixel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 #000;
+}
+
+.pixel-card h2 {
+  font-family: "Press Start 2P", cursive;
+}
+
+.pixel-card p,
+.pixel-card a {
+  font-family: "Roboto", sans-serif;
+}
+
+/* ============================================================
    SKILLS CHART
 ============================================================ */
 .skills-chart {
@@ -891,6 +918,100 @@ button:focus {
 
 .secondary_button:hover {
   background-color: #5e0e6e;
+}
+
+/* ============================================================
+   SOUND CONTROL
+============================================================ */
+#sound-control {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 1000;
+}
+#sound-control button {
+  cursor: pointer;
+}
+
+/* ============================================================
+   PRE SCREEN ABILITAZIONE SUONI
+============================================================ */
+
+#pre-sound-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: "Press Start 2P", cursive;
+}
+
+.pre-sound-box {
+  text-align: center;
+  background: #222;
+  padding: 30px 40px;
+  border-radius: 12px;
+}
+
+.pre-sound-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #555;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.pre-sound-buttons button:hover {
+  background-color: #888;
+}
+
+/* ============================================================
+   RETRO BUTTON
+============================================================ */
+
+.retro-btn {
+  margin-top: 20px;
+  background-color: #ff00bb;
+  color: #ffff;
+  border: none;
+  padding: 10px 20px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 14px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  z-index: 9999;
+  transform: translateX(-50%);
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.retro-btn:hover {
+  /* transform: translate(-2px, -2px); */
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+  background-color: #00e1ff;
+}
+
+.retro-btn:active {
+  /* transform: translate(2px, 2px); */
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
 /* ============================================================
@@ -1557,7 +1678,7 @@ form button:hover {
     flex-direction: row;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px;
   }
 

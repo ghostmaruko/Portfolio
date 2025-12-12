@@ -36,7 +36,6 @@
   <body>
     <div class="header-container">
       <header class="header">
-
         <!-- MENU HAMBURGER -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label
@@ -54,9 +53,17 @@
         <!-- NAVIGATION - deve venire dopo l’input per funzionare con ~ nel CSS -->
         <nav aria-label="Main Navigation">
           <ul id="main-menu" class="navigation-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="work.html" aria-current="page">Work</a></li>
+            <li>
+              <a href="index.html" data-sfx-hover="hover.wav">Home</a>
+            </li>
+            <li>
+              <a href="about.html" data-sfx-hover="hover.wav">About Me</a>
+            </li>
+            <li>
+              <a href="work.html" aria-current="page" data-sfx-hover="hover.wav"
+                >Work</a
+              >
+            </li>
           </ul>
         </nav>
       </header>
@@ -66,7 +73,7 @@
       <section class="work-section">
         <h2 class="pixel-timeline">/work</h2>
         <div class="grid">
-          <div class="grid__item">
+          <div class="grid__item pixel-card" data-sfx-hover="hover.wav">
             <h2>Pokedex-app</h2>
             <p>
               A simple and lightweight Pokédex application built with HTML, CSS,
@@ -79,6 +86,7 @@
               class="work-link"
               href="https://github.com/ghostmaruko/Pokedex-app"
               target="_blank"
+              data-sfx-click="click.wav"
               >View on GitHub</a
             >
           </div>
@@ -200,7 +208,8 @@
         </ul>
       </footer>
     </div>
-
+    <!-- Audio effects -->
+    <script src="js/sound-effect.js" defer></script>
     <script src="js/tota11y.min.js"></script>
   </body>
 </html>

@@ -18,8 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <!-- Custom Styles -->
-      <link rel="stylesheet" href="style/style.production.css" />
+    <link rel="stylesheet" href="style/style.production.css" />
     <!-- <link rel="stylesheet" href="style/style.css" /> -->
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
   </head>
@@ -27,13 +31,6 @@
   <body>
     <div class="header-container">
       <header class="header">
-        <!-- LOGO -->
-        <img
-          src="https://placehold.co/100x100"
-          alt="Logo Marco Esu"
-          class="logo"
-        />
-
         <!-- MENU HAMBURGER -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label
@@ -48,43 +45,31 @@
           <span></span>
         </label>
 
-        <!-- NAVIGATION - deve venire dopo l’input per funzionare con ~ nel CSS -->
-        <nav role="navigation" aria-label="Main Navigation">
-          <ul id="main-menu" role="menubar" class="navigation-list">
-            <li role="presentation">
+        <!-- NAV -->
+        <nav aria-label="Main Navigation">
+          <ul id="main-menu" class="navigation-list">
+            <li>
               <a
                 href="index.html"
-                role="menuitem"
-                class="navigation-list__item navigation-list__item--active"
                 aria-current="page"
-                >Home</a
+                data-sfx-hover="hover.wav"
               >
+                Home
+              </a>
             </li>
-            <li role="presentation">
-              <a href="about.html" role="menuitem" class="navigation-list__item"
-                >About Me</a
-              >
+            <li>
+              <a href="about.html" data-sfx-hover="hover.wav">About Me</a>
             </li>
-            <li role="presentation">
-              <a href="work.html" role="menuitem" class="navigation-list__item"
-                >Work</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="contact.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >Let's Talk</a
-              >
+            <li>
+              <a href="work.html" data-sfx-hover="hover.wav">Work</a>
             </li>
           </ul>
         </nav>
       </header>
     </div>
     <br />
-    <br>
-    <br>
+    <br />
+    <br />
     <div class="container pixelify-sans">
       <h1 class="mb-4">Gotta catch 'em all!</h1>
 
@@ -105,8 +90,6 @@
       <div class="surprise-text">Un Pokémon selvatico appare!</div>
     </div>
     <br />
-    <div class="mt-4">
-      <a href="index.html" class="btn btn-primary"> ⬅ Back to Home </a>
-    </div>
   </body>
+  <script src="js/sound-effect.js" defer></script>
 </html>
