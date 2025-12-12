@@ -99,7 +99,7 @@ a:active {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  background: #0e0e0e;
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 16px 32px;
@@ -939,47 +939,6 @@ button:focus {
   cursor: pointer;
 }
 
-/* ============================================================
-   PRE SCREEN ABILITAZIONE SUONI
-============================================================ */
-
-#pre-sound-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  font-family: "Press Start 2P", cursive;
-}
-
-.pre-sound-box {
-  text-align: center;
-  background: #222;
-  padding: 30px 40px;
-  border-radius: 12px;
-}
-
-.pre-sound-buttons button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-family: "Press Start 2P", cursive;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  background-color: #555;
-  color: #fff;
-  transition: background 0.3s;
-}
-
-.pre-sound-buttons button:hover {
-  background-color: #888;
-}
 
 /* ============================================================
    RETRO BUTTON
@@ -1208,8 +1167,7 @@ button:focus {
 .grid__item {
   background-color: #0e0e0e;
   padding: 24px;
-  border-radius: 20px;
-  border: #6d1cc9 solid 1px;
+  border: #6d1cc9 solid 2px;
   -webkit-box-shadow: 0 2px 5px rgba(46, 46, 46, 0.1);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
