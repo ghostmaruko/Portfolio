@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
 
-    <!-- Google Font Pixelify -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,16 +22,20 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style/style.production.css" />
-    <!-- <link rel="stylesheet" href="style/style.css" /> -->
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
-    <div class="header-container">
-      <header class="header">
-        <!-- MENU HAMBURGER -->
+    <!-- Audio Elements -->
+    <audio id="hover-sound" src="js/sounds/hover.wav" preload="auto" muted></audio>
+    <audio id="click-sound" src="js/sounds/click.wav" preload="auto" muted></audio>
+
+    <!-- HEADER -->
+    <header class="header-container">
+      <div class="header">
         <input type="checkbox" id="menu-toggle" class="menu-toggle" />
         <label
           for="menu-toggle"
@@ -45,51 +49,45 @@
           <span></span>
         </label>
 
-        <!-- NAV -->
         <nav aria-label="Main Navigation">
           <ul id="main-menu" class="navigation-list">
-            <li>
-              <a
-                href="index.html"
-                aria-current="page"
-                data-sfx-hover="hover.wav"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="about.html" data-sfx-hover="hover.wav">About Me</a>
-            </li>
-            <li>
-              <a href="work.html" data-sfx-hover="hover.wav">Work</a>
-            </li>
+            <li><a href="index.html" data-sfx-hover="hover.wav">Home</a></li>
+            <li><a href="about.html" data-sfx-hover="hover.wav">About Me</a></li>
+            <li><a href="work.html" data-sfx-hover="hover.wav">Work</a></li>
           </ul>
         </nav>
-      </header>
-    </div>
-    <br />
-    <br />
-    <br />
-    <div class="container pixelify-sans">
-      <h1 class="pixel-timeline-easter-egg">Gotta catch 'em all!</h1>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container pixelify-sans text-center mt-5">
+      <br>
+      <h1 class="pixel-timeline-easter-egg mb-4">Gotta catch 'em all!</h1>
 
       <div class="d-flex justify-content-center">
-        <button class="card egg-card p-4" tabindex="0">
+        <!-- Card per Easter Egg -->
+        <button class="card egg-card p-4" id="catch-button" tabindex="0">
+          <!-- Pokémon Container -->
+          <div id="pokemon-container" class="mb-3"></div>
+
+          <!-- Pokéball -->
           <img
-            src="img/Poké_Ball_icon.svg"
+            src="img/pokeball8bit.png"
             alt="Pokéball"
-            class="pokeball-icon mx-auto"
+            class="pokeball-icon mx-auto mb-2"
           />
-          <h2 class="card-title pixelify-sans">Click me!</h2>
-          <p class="card-text pixelify-sans">
-            Qualcosa di misterioso accadrà...
-          </p>
+
+          <h2 class="card-title pixelify-sans">Throw Pokéball</h2>
+          <p class="card-text pixelify-sans">A wild Pokémon appeared!</p>
         </button>
       </div>
 
-      <div class="surprise-text">Un Pokémon selvatico appare!</div>
-    </div>
-    <br />
+      <!-- Messaggio di cattura -->
+      <div class="surprise-text mt-3 pixelify-sans"></div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/sound-system.js" defer></script>
+    <script src="js/easter-egg.js" defer></script>
   </body>
-  <script src="js/sound-effect.js" defer></script>
 </html>
