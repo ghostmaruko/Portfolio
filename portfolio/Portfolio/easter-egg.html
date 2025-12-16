@@ -30,8 +30,21 @@
 
   <body>
     <!-- Audio Elements -->
-    <audio id="hover-sound" src="js/sounds/hover.wav" preload="auto" muted></audio>
-    <audio id="click-sound" src="js/sounds/click.wav" preload="auto" muted></audio>
+    <audio
+      id="hover-sound"
+      src="js/sounds/hover.wav"
+      preload="auto"
+      muted
+    ></audio>
+    <audio
+      id="click-sound"
+      src="js/sounds/click.wav"
+      preload="auto"
+      muted
+    ></audio>
+    <audio id="lose-sound" src="js/sounds/lose.wav" preload="auto"></audio>
+    <audio id="win-sound" src="js/sounds/win.wav" preload="auto"></audio>
+    <audio id="error-sound" src="js/sounds/error.wav" preload="auto"></audio>
 
     <!-- HEADER -->
     <header class="header-container">
@@ -52,7 +65,9 @@
         <nav aria-label="Main Navigation">
           <ul id="main-menu" class="navigation-list">
             <li><a href="index.html" data-sfx-hover="hover.wav">Home</a></li>
-            <li><a href="about.html" data-sfx-hover="hover.wav">About Me</a></li>
+            <li>
+              <a href="about.html" data-sfx-hover="hover.wav">About Me</a>
+            </li>
             <li><a href="work.html" data-sfx-hover="hover.wav">Work</a></li>
           </ul>
         </nav>
@@ -61,13 +76,15 @@
 
     <!-- MAIN CONTENT -->
     <main class="container pixelify-sans text-center mt-5">
-      <br>
+      <br />
       <h1 class="pixel-timeline-easter-egg mb-4">Gotta catch 'em all!</h1>
 
       <div class="d-flex justify-content-center">
         <!-- Card per Easter Egg -->
         <button class="card egg-card p-4" id="catch-button" tabindex="0">
           <!-- Pokémon Container -->
+          <div id="screen-flash" class="screen-flash"></div>
+
           <div id="pokemon-container" class="mb-3"></div>
 
           <!-- Pokéball -->

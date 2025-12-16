@@ -1,6 +1,8 @@
 console.log("Easter Egg JS loaded");
 
-// Lista Pokémon con probabilità e chance di cattura
+// ================================
+// Pokémon Pool
+// ================================
 const pokemonPool = [
   {
     name: "Pikachu",
@@ -62,38 +64,39 @@ const pokemonPool = [
     chance: 12,
     catchRate: 0.3,
   },
-  { name: "Mew", img: "img/pokemon/mew.png", chance: 3, catchRate: 0.06 }, // Easter Egg raro
+  { name: "Mew", img: "img/pokemon/mew.png", chance: 3, catchRate: 0.06 },
   {
     name: "Shiny Mew",
     img: "img/pokemon/mew-shiny.png",
     chance: 1,
     catchRate: 0.03,
-  }, // Super raro
+  },
 ];
 
-// Selezione elementi DOM
+// ================================
+// DOM Elements
+// ================================
 const catchButton = document.getElementById("catch-button");
 const pokemonContainer = document.getElementById("pokemon-container");
 const surpriseText = document.querySelector(".surprise-text");
+const winSound = document.getElementById("win-sound");
+const loseSound = document.getElementById("lose-sound");
+const clickSound = document.getElementById("click-sound");
 
-let currentPokemon = spawnPokemon();
-renderPokemon(currentPokemon);
-
-// Funzione per spawn casuale con probabilità
+// ================================
+// Funzioni
+// ================================
 function spawnPokemon() {
   const totalChance = pokemonPool.reduce((sum, p) => sum + p.chance, 0);
   const rand = Math.random() * totalChance;
-
   let cumulative = 0;
-  for (const pokemon of pokemonPool) {
-    cumulative += pokemon.chance;
-    if (rand <= cumulative) return pokemon;
+  for (const p of pokemonPool) {
+    cumulative += p.chance;
+    if (rand <= cumulative) return p;
   }
-
-  return pokemonPool[0]; // fallback
+  return pokemonPool[0];
 }
 
-// Funzione per renderizzare Pokémon nel DOM
 function renderPokemon(pokemon) {
   pokemonContainer.innerHTML = `
     <img src="${pokemon.img}" alt="${pokemon.name}" class="pokemon-sprite" />
@@ -101,18 +104,73 @@ function renderPokemon(pokemon) {
   `;
 }
 
-// Event listener per il click
+// ================================
+// Gestione Spawn e Click
+// ================================
+let currentPokemon = spawnPokemon();
+renderPokemon(currentPokemon);
+
+function screenFlash() {
+  const flash = document.getElementById("screen-flash");
+  if (!flash) return;
+
+  flash.classList.add("flash-active");
+  flash.addEventListener(
+    "animationend",
+    () => flash.classList.remove("flash-active"),
+    { once: true }
+  );
+}
+
+function shakeCard(card) {
+  card.classList.add("shake");
+  card.addEventListener("animationend", () => card.classList.remove("shake"), {
+    once: true,
+  });
+}
+
+function specialMewEffect(card) {
+  card.classList.add("mew-effect");
+  card.addEventListener(
+    "animationend",
+    () => card.classList.remove("mew-effect"),
+    { once: true }
+  );
+}
+
 catchButton.addEventListener("click", () => {
+  clickSound.currentTime = 0;
+  clickSound.play();
+
+  const img = document.querySelector(".pokemon-sprite");
   const rand = Math.random();
+
   if (rand <= currentPokemon.catchRate) {
+    // SUCCESSO
     surpriseText.innerText = `You caught ${currentPokemon.name}!`;
     surpriseText.style.color = "green";
+    winSound.currentTime = 0;
+    winSound.play();
+
+    screenFlash();
+
+    if (currentPokemon.name === "Mew" || currentPokemon.name === "Shiny Mew") {
+      specialMewEffect(img); // ✨ combo rara
+    }
+
+    img.style.animation = "spawn 1.2s ease-out forwards";
   } else {
+    // FALLIMENTO
     surpriseText.innerText = `${currentPokemon.name} escaped!`;
     surpriseText.style.color = "red";
+    loseSound.currentTime = 0;
+    loseSound.play();
+
+    shakeCard(pokemonContainer);
   }
 
-  // Spawn un nuovo Pokémon dopo ogni click
-  currentPokemon = spawnPokemon();
-  renderPokemon(currentPokemon);
+  setTimeout(() => {
+    currentPokemon = spawnPokemon();
+    renderPokemon(currentPokemon);
+  }, 3500);
 });
