@@ -49,26 +49,39 @@
     <!-- HEADER -->
     <header class="header-container">
       <div class="header">
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label
-          for="menu-toggle"
-          class="hamburger"
-          aria-label="Toggle menu"
-          aria-controls="main-menu"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-
+        <!-- NAV -->
         <nav aria-label="Main Navigation">
           <ul id="main-menu" class="navigation-list">
-            <li><a href="index.html" data-sfx-hover="hover.wav">Home</a></li>
             <li>
-              <a href="about.html" data-sfx-hover="hover.wav">About Me</a>
+              <a href="index.html" data-sfx-hover="hover.wav" title="Home">
+                <img
+                  src="img/icons8-treasure-chest-50.png"
+                  alt="Home"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
-            <li><a href="work.html" data-sfx-hover="hover.wav">Work</a></li>
+            <li>
+              <a href="about.html" data-sfx-hover="hover.wav" title="About Me">
+                <img
+                  src="img/icons8-super-mario-50.png"
+                  alt="About Me"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="work.html" data-sfx-hover="hover.wav" title="Work">
+                <img
+                  src="img/icons8-games-folder-50.png"
+                  alt="Work"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -76,7 +89,6 @@
 
     <!-- MAIN CONTENT -->
     <main class="container pixelify-sans text-center mt-5">
-      <br />
       <h1 class="pixel-timeline-easter-egg mb-4">Gotta catch 'em all!</h1>
 
       <div class="d-flex justify-content-center">
@@ -102,6 +114,11 @@
       <!-- Messaggio di cattura -->
       <div class="surprise-text mt-3 pixelify-sans"></div>
     </main>
+
+    <!-- SOUND CONTROL -->
+    <div id="sound-control">
+      <button id="sound-toggle" aria-label="Toggle sound">🔈</button>
+    </div>
 
     <!-- Scripts -->
     <script src="js/sound-system.js" defer></script>

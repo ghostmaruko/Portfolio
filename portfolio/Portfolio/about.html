@@ -27,6 +27,7 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style/style.production.css" />
+    <link rel="stylesheet" href="style/mobileFirst.css" />
   </head>
   <body>
     <!-- Global Audio Elements -->
@@ -46,28 +47,44 @@
     <!-- HEADER -->
     <header class="header-container">
       <div class="header">
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label
-          for="menu-toggle"
-          class="hamburger"
-          aria-label="Toggle menu"
-          aria-controls="main-menu"
-        >
-          <span></span><span></span><span></span>
-        </label>
-
+        <!-- NAV -->
         <nav aria-label="Main Navigation">
           <ul id="main-menu" class="navigation-list">
-            <li><a href="index.html" data-sfx-hover="hover.wav">Home</a></li>
+            <li>
+              <a href="index.html" data-sfx-hover="hover.wav" title="Home">
+                <img
+                  src="img/icons8-treasure-chest-50.png"
+                  alt="Home"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            </li>
             <li>
               <a
-                href="about.html"
                 aria-current="page"
+                href="about.html"
                 data-sfx-hover="hover.wav"
-                >About Me</a
+                title="About Me"
               >
+                <img
+                  src="img/icons8-super-mario-50.png"
+                  alt="About Me"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
-            <li><a href="work.html" data-sfx-hover="hover.wav">Work</a></li>
+            <li>
+              <a href="work.html" data-sfx-hover="hover.wav" title="Work">
+                <img
+                  src="img/icons8-games-folder-50.png"
+                  alt="Work"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -97,7 +114,6 @@
           <div class="timeline-item">
             <div class="timeline-icon"></div>
             <div class="timeline-content">
-              <h2>2025 – oggi | Software Engineering Student</h2>
               <h2>2025 – Present | Software Engineering Student</h2>
               <h3>CareerFoundry (Online)</h3>
               <p>
@@ -240,7 +256,7 @@
 
     <!-- FOOTER -->
     <footer class="footer-container">
-      <p>&copy; 2025 My Website</p>
+      <!-- <p>&copy; 2025 My Website</p> -->
       <ul class="social-icons">
         <li>
           <a
@@ -269,17 +285,8 @@
       </ul>
     </footer>
 
-    <!-- SOUND CONTROL -->
     <div id="sound-control">
-      <button id="sound-toggle">🔈 Sound ON</button>
-      <input
-        type="range"
-        id="volume-slider"
-        min="0"
-        max="1"
-        step="0.05"
-        value="0.6"
-      />
+      <button id="sound-toggle" aria-label="Toggle sound">🔈</button>
     </div>
 
     <!-- Scripts -->

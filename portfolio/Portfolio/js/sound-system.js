@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const clickSound = document.getElementById("click-sound");
 
   const soundToggle = document.getElementById("sound-toggle");
-  const volumeSlider = document.getElementById("volume-slider");
 
   // ALZA IL VOLUME DEFAULT
   hoverSound.volume = 0.6;
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hoverSound.muted = !isMuted;
     clickSound.muted = !isMuted;
 
-    soundToggle.textContent = isMuted ? "🔈 Sound ON" : "🔇 Sound OFF";
+    soundToggle.textContent = isMuted ? "🔈 ON" : "🔇 OFF";
   });
 
   // VOLUME SLIDER
