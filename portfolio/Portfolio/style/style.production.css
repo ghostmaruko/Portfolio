@@ -312,19 +312,28 @@ p,
 }
 
 .level.html {
-  width: 70%;
-}
-.level.css {
   width: 65%;
 }
+.level.css {
+  width: 45%;
+}
 .level.js {
-  width: 50%;
+  width: 45%;
 }
 .level.react {
-  width: 25%;
+  width: 30%;
 }
 .level.C {
-  width: 50%;
+  width: 40%;
+}
+.level.ng {
+  width: 30%;
+}
+.level.ad {
+  width: 70%;
+}
+.level.fg {
+  width: 60%;
 }
 
 /* ============================================================
@@ -656,7 +665,7 @@ button:focus {
   right: 0.8rem;
 
   /* background: rgba(0, 0, 0, 0.4); */
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); */
 }
 
 /* ============================================================
