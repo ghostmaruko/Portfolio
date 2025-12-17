@@ -2,105 +2,221 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About Me</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon-16x16.png" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
     <!-- Custom Styles -->
-      <link rel="stylesheet" href="style/style.production.css" />
-    <!-- <link rel="stylesheet" href="style/style.css" /> -->
+    <link rel="stylesheet" href="style/style.production.css" />
+    <link rel="stylesheet" href="style/mobileFirst.css" />
   </head>
   <body>
-    <div class="header-container">
-      <header class="header">
-        <!-- LOGO -->
-        <img
-          src="https://placehold.co/100x100"
-          alt="Logo Marco Esu"
-          class="logo"
-        />
+    <!-- Global Audio Elements -->
+    <audio
+      id="hover-sound"
+      src="js/sounds/hover.wav"
+      preload="auto"
+      muted
+    ></audio>
+    <audio
+      id="click-sound"
+      src="js/sounds/click.wav"
+      preload="auto"
+      muted
+    ></audio>
 
-        <!-- MENU HAMBURGER -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label
-          for="menu-toggle"
-          class="hamburger"
-          aria-label="Toggle menu"
-          aria-controls="main-menu"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-
-        <!-- NAVIGATION - deve venire dopo l’input per funzionare con ~ nel CSS -->
-        <nav role="navigation" aria-label="Main Navigation">
-          <ul id="main-menu" role="menubar" class="navigation-list">
-            <li role="presentation">
+    <!-- HEADER -->
+    <header class="header-container">
+      <div class="header">
+        <!-- NAV -->
+        <nav aria-label="Main Navigation">
+          <ul id="main-menu" class="navigation-list">
+            <li>
+              <a href="index.html" data-sfx-hover="hover.wav" title="Home">
+                <img
+                  src="img/icons8-treasure-chest-50.png"
+                  alt="Home"
+                  width="32"
+                  height="32"
+                />
+              </a>
+            </li>
+            <li>
               <a
-                href="index.html"
-                role="menuitem"
-                class="navigation-list__item navigation-list__item--active"
                 aria-current="page"
-                >Home</a
+                href="about.html"
+                data-sfx-hover="hover.wav"
+                title="About Me"
               >
+                <img
+                  src="img/icons8-super-mario-50.png"
+                  alt="About Me"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
-            <li role="presentation">
-              <a href="about.html" role="menuitem" class="navigation-list__item"
-                >About Me</a
-              >
-            </li>
-            <li role="presentation">
-              <a href="work.html" role="menuitem" class="navigation-list__item"
-                >Work</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="contact.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >Let's Talk</a
-              >
+            <li>
+              <a href="work.html" data-sfx-hover="hover.wav" title="Work">
+                <img
+                  src="img/icons8-games-folder-50.png"
+                  alt="Work"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
           </ul>
         </nav>
-      </header>
-    </div>
-    <main style="padding-top: 100px">
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- INTRO -->
       <section class="about-container">
-        <img
-          src="img/profile_picture.jpg"
-          class="profile_picture"
-          alt="Marco Esu"
-        />
         <div>
-          <h1>Hello World</h1>
+          <h2 class="pixel-timeline">/experiences</h2>
           <p class="about-text">
             I’m Marco, a web developer driven by curiosity and continuous
-            learning. My background combines coding, UX/UI design, and a genuine
-            passion for problem-solving. Outside of development, I recharge my
+            learning. My background combines coding, UX/UI design, and a passion
+            for problem-solving. Outside of development, I recharge my
             creativity through sports, video games, manga, LEGO builds, and
-            exploring new destinations. I approach every project with attention
-            to detail, clean code, and a focus on intuitive user experience.
+            travel. I approach every project with attention to detail, clean
+            code, and intuitive UX.
           </p>
         </div>
       </section>
 
+      <!-- TIMELINE -->
+      <section class="pixel-timeline">
+        <h1>My Journey</h1>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2025 – Present | Software Engineering Student</h2>
+              <h3>CareerFoundry (Online)</h3>
+              <p>
+                Currently enrolled in an intensive Software Engineering program
+                with a strong focus on full-stack web development, software
+                engineering best practices, testing, and deployment. Gaining
+                hands-on experience with
+                <strong>JavaScript, React, Node.js</strong>, REST APIs, and
+                modern backend architectures through real-world projects.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2023 – 2024 | Test Automation Consultant</h2>
+              <h3>Concept Quality Reply</h3>
+              <p>
+                Worked on functional and integration test automation for
+                enterprise-level software. Designed and maintained automated
+                test suites integrated into <strong>CI/CD pipelines</strong>,
+                collaborating closely with development teams to improve software
+                quality, reliability, and delivery workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2023 | Frontend Developer Intern</h2>
+              <h3>Websolute</h3>
+              <p>
+                Completed a 3-month internship focused on frontend web
+                development. Gained practical experience building responsive web
+                pages and user interfaces using
+                <strong>HTML, CSS, JavaScript</strong>, and modern frameworks.
+                Collaborated with designers and backend developers to deliver
+                seamless user experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2022 – 2024 | Junior Developer</h2>
+              <h3>Bit Software Solutions</h3>
+              <p>
+                Contributed to real-world software projects as a Junior
+                Developer. Implemented new features, fixed bugs, and
+                collaborated on both
+                <strong>frontend and backend components</strong> within a
+                professional development team.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2022 | Full-Stack Developer Student</h2>
+              <h3>Develhope</h3>
+              <p>
+                Completed an intensive full-stack development program focused on
+                building end-to-end web applications. Worked with
+                <strong>JavaScript, Node.js, NoSQL databases</strong>, and
+                modern frontend frameworks, strengthening both technical and
+                problem-solving skills.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-icon"></div>
+            <div class="timeline-content">
+              <h2>2017 – 2022 | Graphic Designer</h2>
+              <h3>Ceramica Mediterranea Spa & Freelance</h3>
+              <p>
+                Worked as a Graphic Designer in both corporate and freelance
+                environments, producing visual assets for branding, marketing,
+                and digital communication. Contributed to internal and external
+                corporate materials at Ceramica Mediterranea Spa, while also
+                delivering creative solutions for freelance clients.
+              </p>
+              <p>
+                This experience strengthened my visual thinking, attention to
+                detail, and user-centered design approach, which I now apply to
+                frontend development and UI-focused projects.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
       <section class="skills-chart">
         <h2>My Skills</h2>
         <div class="skill">
@@ -120,16 +236,28 @@
           <div class="bar"><div class="level react"></div></div>
         </div>
         <div class="skill">
+          <span>Angular</span>
+          <div class="bar"><div class="level ng"></div></div>
+        </div>
+        <div class="skill">
           <span>C#</span>
           <div class="bar"><div class="level C"></div></div>
+        </div>
+        <div class="skill">
+          <span>Adobe Suites</span>
+          <div class="bar"><div class="level ad"></div></div>
+        </div>
+        <div class="skill">
+          <span>Figma</span>
+          <div class="bar"><div class="level fg"></div></div>
         </div>
       </section>
     </main>
 
+    <!-- POKEBALL -->
     <div class="pokeball-wrapper">
-      <!-- <div class="pokeball"></div> -->
       <img
-        src="img/Poké_Ball_icon.svg"
+        src="img/pokeball8bit.png"
         alt="Pokéball"
         class="pokeball"
         width="96"
@@ -138,32 +266,42 @@
       <div class="gotcha-text pixelify-sans">Gotcha!</div>
     </div>
 
-    <div class="footer-container">
-      <footer>
-        <p>&copy; 2025 My Website</p>
-        <h2>Follow me on</h2>
-        <ul class="social-icons">
-          <li>
-            <a href="https://github.com/" target="_blank" rel="noopener"
-              ><img
-                src="https://img.icons8.com/ios-filled/50/ffffff/github--v1.png"
-                alt="GitHub"
-            /></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/marco-esu-502b89136/"
-              target="_blank"
-              rel="noopener"
-              ><img
-                src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"
-                alt="LinkedIn"
-            /></a>
-          </li>
-        </ul>
-      </footer>
+    <!-- FOOTER -->
+    <footer class="footer-container">
+      <!-- <p>&copy; 2025 My Website</p> -->
+      <ul class="social-icons">
+        <li>
+          <a
+            href="https://github.com/ghostmaruko"
+            target="_blank"
+            rel="noopener"
+            data-sfx-click="click.wav"
+            data-sfx-hover="hover.wav"
+          >
+            <img src="img/github.png" alt="GitHub" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/marco-esu-502b89136/"
+            target="_blank"
+            rel="noopener"
+            data-sfx-click="click.wav"
+            data-sfx-hover="hover.wav"
+          >
+            <img src="img/LinkedIn.png" alt="LinkedIn" />
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <div id="sound-control">
+      <button id="sound-toggle" aria-label="Toggle sound">🔈</button>
     </div>
 
+    <!-- Scripts -->
+    <script src="js/sound-system.js" defer></script>
+    <!--  <script src="js/sound-effect.js" defer></script> -->
     <script src="js/tota11y.min.js"></script>
   </body>
 </html>

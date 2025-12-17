@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Easter Egg - Pokémon</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon-16x16.png" />
 
     <!-- Bootstrap CDN -->
     <link
@@ -11,102 +12,117 @@
       rel="stylesheet"
     />
 
-    <!-- Google Font Pixelify -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Custom Styles -->
-      <link rel="stylesheet" href="style/style.production.css" />
-    <!-- <link rel="stylesheet" href="style/style.css" /> -->
+    <link rel="stylesheet" href="style/style.production.css" />
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
-    <div class="header-container">
-      <header class="header">
-        <!-- LOGO -->
-        <img
-          src="https://placehold.co/100x100"
-          alt="Logo Marco Esu"
-          class="logo"
-        />
+    <!-- Audio Elements -->
+    <audio
+      id="hover-sound"
+      src="js/sounds/hover.wav"
+      preload="auto"
+      muted
+    ></audio>
+    <audio
+      id="click-sound"
+      src="js/sounds/click.wav"
+      preload="auto"
+      muted
+    ></audio>
+    <audio id="lose-sound" src="js/sounds/lose.wav" preload="auto"></audio>
+    <audio id="win-sound" src="js/sounds/win.wav" preload="auto"></audio>
+    <audio id="error-sound" src="js/sounds/error.wav" preload="auto"></audio>
 
-        <!-- MENU HAMBURGER -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label
-          for="menu-toggle"
-          class="hamburger"
-          aria-label="Toggle menu"
-          aria-controls="main-menu"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-
-        <!-- NAVIGATION - deve venire dopo l’input per funzionare con ~ nel CSS -->
-        <nav role="navigation" aria-label="Main Navigation">
-          <ul id="main-menu" role="menubar" class="navigation-list">
-            <li role="presentation">
-              <a
-                href="index.html"
-                role="menuitem"
-                class="navigation-list__item navigation-list__item--active"
-                aria-current="page"
-                >Home</a
-              >
+    <!-- HEADER -->
+    <header class="header-container">
+      <div class="header">
+        <!-- NAV -->
+        <nav aria-label="Main Navigation">
+          <ul id="main-menu" class="navigation-list">
+            <li>
+              <a href="index.html" data-sfx-hover="hover.wav" title="Home">
+                <img
+                  src="img/icons8-treasure-chest-50.png"
+                  alt="Home"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
-            <li role="presentation">
-              <a href="about.html" role="menuitem" class="navigation-list__item"
-                >About Me</a
-              >
+            <li>
+              <a href="about.html" data-sfx-hover="hover.wav" title="About Me">
+                <img
+                  src="img/icons8-super-mario-50.png"
+                  alt="About Me"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
-            <li role="presentation">
-              <a href="work.html" role="menuitem" class="navigation-list__item"
-                >Work</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="contact.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >Let's Talk</a
-              >
+            <li>
+              <a href="work.html" data-sfx-hover="hover.wav" title="Work">
+                <img
+                  src="img/icons8-games-folder-50.png"
+                  alt="Work"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
           </ul>
         </nav>
-      </header>
-    </div>
-    <br />
-    <br>
-    <br>
-    <div class="container pixelify-sans">
-      <h1 class="mb-4">Gotta catch 'em all!</h1>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container pixelify-sans text-center mt-5">
+      <h1 class="pixel-timeline-easter-egg mb-4">Gotta catch 'em all!</h1>
 
       <div class="d-flex justify-content-center">
-        <button class="card egg-card p-4" tabindex="0">
+        <!-- Card per Easter Egg -->
+        <button class="card egg-card p-4" id="catch-button" tabindex="0">
+          <!-- Pokémon Container -->
+          <div id="screen-flash" class="screen-flash"></div>
+
+          <div id="pokemon-container" class="mb-3"></div>
+
+          <!-- Pokéball -->
           <img
-            src="img/Poké_Ball_icon.svg"
+            src="img/pokeball8bit.png"
             alt="Pokéball"
-            class="pokeball-icon mx-auto"
+            class="pokeball-icon mx-auto mb-2"
           />
-          <h2 class="card-title pixelify-sans">Click me!</h2>
-          <p class="card-text pixelify-sans">
-            Qualcosa di misterioso accadrà...
-          </p>
+
+          <h2 class="card-title pixelify-sans">Throw Pokéball</h2>
+          <p class="card-text pixelify-sans">A wild Pokémon appeared!</p>
         </button>
       </div>
 
-      <div class="surprise-text">Un Pokémon selvatico appare!</div>
-    </div>
-    <br />
-    <div class="mt-4">
-      <a href="index.html" class="btn btn-primary"> ⬅ Back to Home </a>
-    </div>
+      <!-- Messaggio di cattura -->
+      <div class="surprise-text mt-3 pixelify-sans"></div>
+    </main>
+
+    <!-- SOUND CONTROL -->
+    <!--    <div id="sound-control">
+      <button id="sound-toggle" aria-label="Toggle sound">🔈</button>
+    </div> -->
+
+    <!-- Scripts -->
+    <script src="js/sound-system.js" defer></script>
+    <script src="js/easter-egg.js" defer></script>
   </body>
 </html>

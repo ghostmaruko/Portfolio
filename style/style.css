@@ -18,22 +18,31 @@
   --color-secondary: #6d1cc9;
   --color-accent: #d400ff;
   --color-dark-accent: #1e00c7;
-  --color-link-visited: #ffffff;
+
+  /* LINK COLORS */
+  --color-link-visited: #b586ff;
   --color-link-active: #489c79;
-  --color-button-hover: #5e0e6e;
-  --color-button-alt: #d400ff;
+
+  /* TEXT COLORS */
+  --color-text-main: #e0e0e0; /* NUOVO: testo globale chiaro, non bianco */
+  --color-text-white: #ffffff;
   --color-text-dark: #2b2b2b;
-  --color-text-light: #666666;
+  --color-text-mid: #666666;
+
+  /* BG colors */
   --color-light-grey: #f0f0f0;
   --color-grey: #e0e0e0;
   --color-bg-light: #f9f9f9;
   --color-bg-white: #ffffff;
   --color-bg-surface: #141414;
   --color-footer: #000000;
+  --color-background: #000000;
+
+  /* Errors */
   --color-error: #e63946;
   --color-error-focus: #d90429;
+
   --color-gotcha: #ffffff;
-  --color-background: #000000;
 
   /* === Spacing === */
   --spacing-xs: 5px;
@@ -65,14 +74,14 @@ body {
   font-size: var(--font-size-base);
   margin-top: 100px;
   padding: 0;
-  background-color: #f8f9fa; /* da Easter Egg section */
-  text-align: center; /* da Easter Egg section */
-  color: var(--color-bg-white); /* testo bianco */
-  background-color: var(
-    --color-background
-  ); /* sfondo scuro se vuoi più contrasto */
+
+  background-color: var(--color-background);
+  color: var(--color-text-main); /* FIX: non più bianco fisso */
+
+  text-align: center;
 }
 
+/* Inputs */
 input,
 select,
 textarea,
@@ -81,36 +90,32 @@ button {
   font-size: 1rem;
 }
 
-/* Links default */
+/* ============================================================
+   LINKS
+============================================================ */
 a {
   color: var(--color-primary);
   text-decoration: none;
   transition: color var(--transition-normal);
 }
+
 a:visited {
-  color: var(--color-link-visited);
+  color: var(--color-link-visited); /* NON PIÙ BIANCO */
 }
+
 a:hover,
 a:focus {
   text-decoration: none;
-  color: var(--color-light-grey);
+  color: var(--color-grey);
 }
+
 a:active {
   color: var(--color-link-active);
 }
 
 /* ============================================================
-   HEADER NAVBAR ADATTATA
+   HEADER NAVBAR
 ============================================================ */
-/* .header-container {
-  background-color: var(--color-footer); 
-  padding: var(--spacing-md);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-} */
-
 .header {
   position: fixed;
   top: 24px;
@@ -121,8 +126,6 @@ a:active {
   -webkit-backdrop-filter: blur(10px);
   padding: 16px 32px;
   border-radius: var(--radius-xl);
-  border-style: solid;
-  border-color: var(--color-secondary);
   border: 1px solid var(--color-secondary);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -131,12 +134,15 @@ a:active {
   gap: 40px;
   z-index: 999;
   max-width: 960px;
-  width: 90%;
+  width: 50%;
+}
+
+.header .navigation-list__item {
+  color: #ffffff;
 }
 
 .logo {
   width: 50px;
-  height: auto;
   object-fit: contain;
   cursor: pointer;
   user-select: none;
@@ -145,9 +151,9 @@ a:active {
 
 nav[role="navigation"] {
   flex-grow: 0;
-  margin-left: 0;
 }
 
+/* NAV LIST */
 .navigation-list {
   list-style: none;
   display: flex;
@@ -161,17 +167,14 @@ nav[role="navigation"] {
 .navigation-list__item {
   position: relative;
   display: inline-block;
-  color: var(--color-bg-white);
+  color: var(--color-text-white); /* FIX */
   font-weight: 500;
   font-size: var(--font-size-base);
-  text-decoration: none;
   padding: 10px 6px;
-  overflow: hidden;
   transition: color var(--transition-normal);
   user-select: none;
 }
 
-/* PullDown effect (linea animata sopra) */
 .navigation-list__item::before {
   content: "";
   position: absolute;
@@ -179,31 +182,24 @@ nav[role="navigation"] {
   height: 2px;
   left: 0;
   top: 0;
-  background: var(--color-bg-white);
+  background: var(--color-text-white);
   opacity: 0.3;
   transition: height 0.3s ease;
 }
 
-.navigation-list__item:hover::before,
-.navigation-list__item:focus::before {
+.navigation-list__item:hover::before {
   height: 100%;
 }
 
-.navigation-list__item:hover,
-.navigation-list__item:focus {
-  color: var(--color-bg-white);
-  outline: none;
-}
-
-/* Evidenzia link attivo */
+/* ATTIVO */
 .navigation-list__item--active {
   font-weight: 700;
-  color: var(--color-bg-white);
+  color: var(--color-text-white);
 }
 
-/* Bottone Contact - stile speciale */
+/* CONTACT BUTTON */
 .navigation-list li:last-child .navigation-list__item {
-  background-color: var(--color-bg-white);
+  background-color: var(--color-text-white);
   color: var(--color-footer);
   font-weight: 600;
   padding: 10px 24px;
@@ -213,15 +209,14 @@ nav[role="navigation"] {
   box-shadow: 0 4px 8px rgb(114 91 218 / 0.4);
 }
 
-.navigation-list li:last-child .navigation-list__item:hover,
-.navigation-list li:last-child .navigation-list__item:focus {
-  background-color: #5a45b8; /* variante scura di viola */
-  color: var(--color-bg-white);
-  outline: none;
-  box-shadow: 0 6px 12px rgb(90 69 184 / 0.7);
+.navigation-list li:last-child .navigation-list__item:hover {
+  background-color: #5a45b8;
+  color: var(--color-text-white);
 }
 
-/* HAMBURGER ICON */
+/* ============================================================
+   HAMBURGER MENU
+============================================================ */
 .menu-toggle {
   display: none;
 }
@@ -241,31 +236,29 @@ nav[role="navigation"] {
 .hamburger span {
   width: 18px;
   height: 2px;
-  background: var(--color-bg-white);
+  background: var(--color-text-white);
   margin: 3px 0;
   transition: all 0.3s ease-in-out;
 }
 
-/* MOBILE LAYOUT */
+/* ============================================================
+   MOBILE NAV FIX (PROBLEMA TESTO BIANCO RISOLTO)
+============================================================ */
 @media (max-width: 770px) {
   .header {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     padding: 8px 16px;
     width: 100%;
-    max-width: none;
     border-radius: 0;
     left: 0;
     transform: none;
     top: 0;
-    border: none;
     border-bottom: 1px solid var(--color-secondary);
   }
 
   .logo {
     width: 48px;
-    margin: 0;
   }
 
   .hamburger {
@@ -282,28 +275,31 @@ nav[role="navigation"] {
   .navigation-list {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
     padding: 16px;
     gap: 16px;
-    background: var(--color-footer);
+    background: var(--color-bg-white);
     border-bottom: 1px solid var(--color-secondary);
+    align-items: flex-start;
   }
 
+  /* FIX CRITICO: testo scuro su mobile */
   .navigation-list__item {
     width: 100%;
     text-align: left;
     padding: 8px 0;
     font-size: 16px;
-    border: none;
+    color: var(--color-text-dark) !important;
   }
 
+  .navigation-list__item::before {
+    background: var(--color-text-dark);
+  }
+
+  /* Contact button */
   .navigation-list li:last-child .navigation-list__item {
-    background: var(--color-bg-white);
-    color: var(--color-footer);
-    padding: 10px 24px;
+    background: var(--color-primary);
+    color: var(--color-text-white) !important;
     border-radius: var(--radius-md);
-    font-weight: 600;
-    width: fit-content;
     margin-top: 8px;
   }
 
@@ -315,20 +311,14 @@ nav[role="navigation"] {
 /* ============================================================
    ABOUT SECTION
 ============================================================ */
+
 .about-container {
   display: flex;
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
-  padding: var(--spacing-md);
-}
-
-.profile_picture {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: var(--spacing-md);
+  padding: var(--spacing-lg) var(--spacing-md);
+  gap: var(--spacing-md);
 }
 
 .about-text {
@@ -336,13 +326,15 @@ nav[role="navigation"] {
   line-height: 1.5;
 }
 
+
 /* ============================================================
    SKILLS CHART
 ============================================================ */
 .skills-chart {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 40px auto;
   padding: var(--spacing-lg) var(--spacing-md);
+  text-align: left;
 }
 
 .skills-chart h2 {
@@ -356,7 +348,7 @@ nav[role="navigation"] {
 
 .skill span {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   font-weight: bold;
 }
 

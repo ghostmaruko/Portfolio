@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Marco Esu Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon-16x16.png" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Normalize -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -16,85 +27,77 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style/style.production.css" />
-    <!-- <link rel="stylesheet" href="style/style.css" /> -->
+    <link rel="stylesheet" href="style/mobileFirst.css" />
   </head>
 
   <body>
+    <!-- Global Audio Elements -->
+    <audio
+      id="hover-sound"
+      src="js/sounds/hover.wav"
+      preload="auto"
+      muted
+    ></audio>
+    <audio
+      id="click-sound"
+      src="js/sounds/click.wav"
+      preload="auto"
+      muted
+    ></audio>
+
+    <!-- HEADER -->
     <div class="header-container">
       <header class="header">
-        <!-- LOGO -->
-        <img
-          src="https://placehold.co/100x100"
-          alt="Logo Marco Esu"
-          class="logo"
-        />
-
-        <!-- MENU HAMBURGER -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label
-          for="menu-toggle"
-          class="hamburger"
-          aria-label="Toggle menu"
-          aria-controls="main-menu"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-
-        <!-- NAVIGATION - deve venire dopo l’input per funzionare con ~ nel CSS -->
-        <nav role="navigation" aria-label="Main Navigation">
-          <ul id="main-menu" role="menubar" class="navigation-list">
-            <li role="presentation">
+        <!-- NAV -->
+        <nav aria-label="Main Navigation">
+          <ul id="main-menu" class="navigation-list">
+            <li>
               <a
                 href="index.html"
-                role="menuitem"
-                class="navigation-list__item navigation-list__item--active"
                 aria-current="page"
-                >Home</a
+                data-sfx-hover="hover.wav"
+                title="Home"
               >
+                <img
+                  src="img/icons8-treasure-chest-50.png"
+                  alt="Home"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
-            <li role="presentation">
-              <a href="about.html" role="menuitem" class="navigation-list__item"
-                >About Me</a
-              >
+            <li>
+              <a href="about.html" data-sfx-hover="hover.wav" title="About Me">
+                <img
+                  src="img/icons8-super-mario-50.png"
+                  alt="About Me"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
-            <li role="presentation">
-              <a href="work.html" role="menuitem" class="navigation-list__item"
-                >Work</a
-              >
-            </li>
-            <li role="presentation">
-              <a
-                href="contact.html"
-                role="menuitem"
-                class="navigation-list__item"
-                >Let's Talk</a
-              >
+            <li>
+              <a href="work.html" data-sfx-hover="hover.wav" title="Work">
+                <img
+                  src="img/icons8-games-folder-50.png"
+                  alt="Work"
+                  width="32"
+                  height="32"
+                />
+              </a>
             </li>
           </ul>
         </nav>
       </header>
     </div>
 
-    <main style="padding-top: 100px">
+    <main>
       <section class="about-container">
-        <img
-          src="img/profile_picture.jpg"
-          class="profile_picture"
-          alt="Marco Esu"
-        />
         <div>
-          <h1>Hello World</h1>
+          <h2 class="pixel-timeline">/helloWorld</h2>
           <p class="about-text">
             I’m Marco Esu — a curious mind who loves to build clean,
             interactive, and user-friendly websites. When I’m not coding, you’ll
@@ -107,10 +110,10 @@
       </section>
     </main>
 
+    <!-- POKEBALL -->
     <div class="pokeball-wrapper">
-      <!-- <div class="pokeball"></div> -->
       <img
-        src="img/Poké_Ball_icon.svg"
+        src="img/pokeball8bit.png"
         alt="Pokéball"
         class="pokeball"
         width="96"
@@ -121,35 +124,56 @@
 
     <div class="footer-container">
       <footer>
-        <p>&copy; 2025 My Website</p>
-        <h2>Follow me on</h2>
+        <!-- <p>&copy; 2025 My Website</p> -->
         <ul class="social-icons">
           <li>
-            <a href="https://github.com/" target="_blank" rel="noopener"
-              ><img
-                src="https://img.icons8.com/ios-filled/50/ffffff/github--v1.png"
-                alt="GitHub"
-            /></a>
+            <a
+              href="https://github.com/ghostmaruko"
+              target="_blank"
+              rel="noopener"
+              data-sfx-hover="hover.wav"
+              data-sfx-click="click.wav"
+            >
+              <img src="img/github.png" alt="GitHub" />
+            </a>
           </li>
           <li>
             <a
               href="https://www.linkedin.com/in/marco-esu-502b89136/"
               target="_blank"
               rel="noopener"
-              ><img
-                src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"
-                alt="LinkedIn"
-            /></a>
+              data-sfx-hover="hover.wav"
+              data-sfx-click="click.wav"
+            >
+              <img src="img/LinkedIn.png" alt="LinkedIn" />
+            </a>
           </li>
         </ul>
       </footer>
     </div>
-    <br />
-    <br />
-    <div class="easter-egg">
-      <a href="easter-egg.html"><button>Click me if you are brave!</button></a>
+    <!-- SOUND CONTROL -->
+
+    <div id="sound-control">
+      <button id="sound-toggle" aria-label="Toggle sound">🔈</button>
     </div>
-    <!-- Include tota11y for accessibility testing -->
+
+    <div class="easter-egg">
+      <a
+        href="easter-egg.html"
+        class="retro-btn"
+        data-sfx-hover="hover.wav"
+        data-sfx-click="click.wav"
+        data-delay-navigation
+      >
+        CLICK ME
+      </a>
+    </div>
+
+    <!-- Accessibility tool -->
     <script src="js/tota11y.min.js"></script>
+
+    <!-- Audio effects -->
+    <script src="js/sound-system.js" defer></script>
+    <!-- <script src="js/sound-effect.js" defer></script> -->
   </body>
 </html>
