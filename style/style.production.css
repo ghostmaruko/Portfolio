@@ -84,26 +84,6 @@ a:active {
 /* ============================================================
    HEADER NAVBAR ADATTATA
 ============================================================ */
-/* .header {
-  font-family: "Press Start 2P", monospace;
-  cursor: url("../img/cursor_click.png"), auto;
-  position: fixed;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  padding: 16px 32px;
-  border: 3px solid #6d1cc9;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  z-index: 999;
-  max-width: 960px;
-} */
-
 nav[role="navigation"] {
   flex-grow: 0;
   margin-left: 0;
@@ -1026,7 +1006,7 @@ button:focus {
   backdrop-filter: blur(10px);
 
   border: 3px solid #984eec;
-  border-radius: 12px;
+  
 
   box-shadow: 0 0 5px rgb(255, 0, 200), inset 0 0 10px rgba(212, 0, 255, 0.6);
 
