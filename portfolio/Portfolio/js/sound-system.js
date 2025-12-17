@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const soundToggle = document.getElementById("sound-toggle");
 
   // ALZA IL VOLUME DEFAULT
-  hoverSound.volume = 0.6;
-  clickSound.volume = 0.6;
+  /*   hoverSound.volume = 0.6;
+  clickSound.volume = 0.6; */
 
   // SBLOCCA AUDIO ALLA PRIMA INTERAZIONE
   const unlockAudio = () => {
@@ -37,16 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // CLICK SOUND + REDIRECT
   document.querySelectorAll("[data-sfx-click]").forEach((el) => {
     el.addEventListener("click", (e) => {
-      e.preventDefault(); // blocca default per poter suonare il click prima del redirect
+      const hasDelay = el.hasAttribute("data-delay-navigation");
+      const url = el.getAttribute("href");
+
       clickSound.currentTime = 0;
       clickSound.play();
 
-      const url = el.getAttribute("href");
-      if (url) {
-        // redirect leggermente ritardato per far sentire il click
+      if (hasDelay && url) {
+        e.preventDefault();
         setTimeout(() => {
           window.location.href = url;
-        }, 300);
+        }, 600);
       }
     });
   });
