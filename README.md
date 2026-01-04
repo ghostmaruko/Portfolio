@@ -5,7 +5,7 @@ This repository contains my **personal portfolio website**, designed and develop
 The goal of this project is to present my professional profile, showcase selected projects, and demonstrate my skills in **HTML, CSS, responsive design, and JavaScript**, following modern best practices and a clean project structure.
 
 🔗 **Live site:**  
-https://[ghostmaruko.github.io/Portfolio/](https://portfolio-ecru-theta-66.vercel.app/)
+https://(https://portfolio-ecru-theta-66.vercel.app/)
 
 ---
 
