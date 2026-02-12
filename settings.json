@@ -1,0 +1,43 @@
+{
+  // FORMATTING
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Prettier per file specifici
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  // TABS & INDENT
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  // LINEE & WRAP
+  "editor.wordWrap": "on",
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "prettier.trailingComma": "es5",
+
+  // OPTIONAL: ESLint integration
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+
+  // OPTIONAL: VSCode suggestions
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
+}
